@@ -1,5 +1,6 @@
 import React, { type KeyboardEvent, useRef, useState } from "react";
 import Header from '../components/Header';
+import pdfDocument from '../resources/sample.pdf';
 
 const Chatbot = () => {
 	const [messages, setMessages] = useState<string[]>([
@@ -31,6 +32,8 @@ const Chatbot = () => {
 	</>
 }
 
+const PDFDocument = () => <object data={pdfDocument} type="application/pdf" />
+
 const Home: React.FC = () => {
   return (
     <>
@@ -39,8 +42,8 @@ const Home: React.FC = () => {
 	       <div className="w-80">
 			<Chatbot />
 		   </div>
-		   <div className="bg-gray-background-dark w-full">
-			PDF
+		   <div className="w-full">
+			<PDFDocument />
 		   </div>
         </div>
     </>
