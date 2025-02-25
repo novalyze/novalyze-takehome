@@ -1,6 +1,5 @@
-import React from "react";
-import AppRouter from "./routes/Router";
+import AppRouter from "./routes/Router"
 
-const App: React.FC = () => <AppRouter />;
+const App = () => <AppRouter />
 
-export default App;
+export default App
