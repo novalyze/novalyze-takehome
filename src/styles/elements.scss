@@ -1,0 +1,29 @@
+@use "./values" as v;
+@use "./mixins/animations" as a;
+
+html {
+	font-size: calc(v.$BaseSize * 4);
+}
+
+a {
+	color: v.$Primary;
+	margin-right: calc(v.$BaseSize * 3);
+
+	font-size: 0.9rem;
+	font-weight: 600;
+
+	border-radius: v.$BaseSize;
+	padding: calc(v.$BaseSize * 2) calc(v.$BaseSize * 3.5);
+
+	@include a.EaseOutExpo;
+
+	&:hover {
+		color: v.$CreamWhite;
+		background-color: v.$Primary;
+		border-radius: calc(v.$BaseSize * 1.25);
+	}
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}

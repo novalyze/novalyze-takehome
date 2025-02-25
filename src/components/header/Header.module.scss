@@ -1,3 +1,23 @@
+@use "../../styles/values" as v;
+@use "../../styles/mixins/shadow" as s;
+
 .header {
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 20px 0px;
+	margin: calc(v.$BaseSize * 2) calc(v.$BaseSize * 4);
+	padding: calc(v.$BaseSize * 3) calc(v.$BaseSize * 4);
+	border-radius: 0.5rem;
+
+	background-color: v.$CreamWhite;
+	@include s.SubtleShadow;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	img {
+		$size: 3.5rem;
+
+		height: $size;
+		width: $size;
+		border-radius: calc($size / 8);
+	}
 }

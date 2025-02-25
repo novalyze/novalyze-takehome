@@ -1,39 +1,17 @@
-"use client"
-
-import { PopoverGroup } from "@headlessui/react"
-import Logo from "../../img/logo.png"
+import logo from "../../img/icon.png"
 import styles from "./Header.module.scss"
 
 export default function Header() {
 	return (
-		<header className={`${styles.header} bg-black`}>
-			<nav
-				aria-label="Global"
-				className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
-			>
-				<div className="flex lg:flex-1">
-					<a href="#none" className="-m-1.5 p-1.5">
-						<span className="sr-only">Your Company</span>
-						<img alt="Novalyze logo" src={Logo} className="h-15 w-auto" />
-					</a>
-				</div>
-				<PopoverGroup className="hidden lg:flex lg:gap-x-12">
-					<a href="/" className="text-sm/6 font-semibold text-secondary">
-						Home
-					</a>
-					<a href="#none" className="text-sm/6 font-semibold text-secondary">
-						Marketplace
-					</a>
-					<a href="#none" className="text-sm/6 font-semibold text-secondary">
-						Company
-					</a>
-				</PopoverGroup>
-				<div className="hidden lg:flex lg:flex-1 lg:justify-end">
-					<a href="/login" className="text-sm/6 font-semibold text-secondary">
-						Log in <span aria-hidden="true">&rarr;</span>
-					</a>
-				</div>
-			</nav>
+		<header className={styles.header}>
+			<img alt="Novalyze" src={logo} />
+
+			<div>
+				<a href="/">Home</a>
+				<a href="/login" className="text-sm/6 font-semibold text-secondary">
+					Log in <span aria-hidden="true">&rarr;</span>
+				</a>
+			</div>
 		</header>
 	)
 }

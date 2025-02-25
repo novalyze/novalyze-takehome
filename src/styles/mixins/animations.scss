@@ -1,0 +1,7 @@
+// Animations borrowed from https://easings.net/
+
+@use "../values" as v;
+
+@mixin EaseOutExpo($property: all) {
+	transition: $property v.$AnimationDuration cubic-bezier(0.16, 1, 0.3, 1);
+}
