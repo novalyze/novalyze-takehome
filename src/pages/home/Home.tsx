@@ -1,5 +1,5 @@
 import { type KeyboardEvent, useRef, useState } from "react"
-import pdfDocument from "../resources/sample.pdf"
+import pdfDocument from "../../resources/sample.pdf"
 
 const Chatbot = () => {
 	const [messages, setMessages] = useState<string[]>(["Test A", "Test B"])

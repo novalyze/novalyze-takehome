@@ -1,5 +1,5 @@
 @use "./values" as v;
-@use "./mixins/animations" as a;
+@use "./mixins/transitions" as t;
 
 html {
 	font-size: calc(v.$BaseSize * 4);
@@ -15,7 +15,7 @@ a {
 	border-radius: v.$BaseSize;
 	padding: calc(v.$BaseSize * 2) calc(v.$BaseSize * 3.5);
 
-	@include a.EaseOutExpo;
+	@include t.EaseOutExpo;
 
 	&:hover {
 		color: v.$CreamWhite;
