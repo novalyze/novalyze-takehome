@@ -8,7 +8,7 @@ export default function () {
 
 			<div>
 				<a href="/">Home</a>
-				<a href="/login" className="text-sm/6 font-semibold text-secondary">
+				<a href="/login">
 					Log in <span aria-hidden="true">&rarr;</span>
 				</a>
 			</div>
