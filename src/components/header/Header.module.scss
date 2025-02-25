@@ -2,7 +2,6 @@
 @use "../../styles/mixins/shadow" as s;
 
 .header {
-	margin: calc(v.$BaseSize * 2) calc(v.$BaseSize * 4);
 	padding: calc(v.$BaseSize * 3) calc(v.$BaseSize * 4);
 	border-radius: 0.5rem;
 

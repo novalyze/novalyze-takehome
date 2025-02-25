@@ -1,5 +1,4 @@
 import { type KeyboardEvent, useRef, useState } from "react"
-import { Header } from "../components"
 import pdfDocument from "../resources/sample.pdf"
 
 const Chatbot = () => {
@@ -41,10 +40,9 @@ const PDFDocument = () => (
 	/>
 )
 
-const Home = () => {
+export default function Home() {
 	return (
 		<>
-			<Header />
 			<div className="flex">
 				<div className="w-80">
 					<Chatbot />
@@ -56,5 +54,3 @@ const Home = () => {
 		</>
 	)
 }
-
-export default Home

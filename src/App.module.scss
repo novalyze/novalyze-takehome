@@ -1,0 +1,21 @@
+@use "./styles/values" as v;
+
+.app {
+	height: 100dvh;
+	width: 100vw;
+	overflow: hidden;
+	padding: calc(v.$BaseSize * 3) calc(v.$BaseSize * 4);
+
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+
+.viewport {
+	max-height: 100%;
+	max-width: 100%;
+	flex-grow: 1;
+
+	margin-top: calc(v.$BaseSize * 4);
+	overflow: auto;
+}

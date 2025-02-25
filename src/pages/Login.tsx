@@ -1,9 +1,6 @@
-import { Header } from "../components"
-
-const Login = () => {
+export default function Login() {
 	return (
 		<>
-			<Header />
 			<div className="flex h-screen items-center justify-center bg-gray-background-dark">
 				<div className="max-w-md rounded-xl bg-white p-6 shadow-md">
 					<h2 className="text-2xl font-bold text-gray-900">Login</h2>
@@ -62,5 +59,3 @@ const Login = () => {
 		</>
 	)
 }
-
-export default Login

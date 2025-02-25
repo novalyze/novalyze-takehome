@@ -1,9 +1,6 @@
-import { Header } from "../components"
-
-const Register = () => {
+export default function Register() {
 	return (
 		<>
-			<Header />
 			<div className="flex h-screen items-center justify-center bg-gray-background-dark">
 				<div className="max-w-md rounded-xl bg-white p-6 shadow-md">
 					<h2 className="text-2xl font-bold text-gray-900">New user</h2>
@@ -50,5 +47,3 @@ const Register = () => {
 		</>
 	)
 }
-
-export default Register
