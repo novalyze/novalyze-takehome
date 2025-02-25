@@ -8,7 +8,7 @@ const Chatbot = () => {
 	const inputElRef = useRef<HTMLInputElement>(null)
 
 	const registerMessage = (e: KeyboardEvent<HTMLInputElement>) => {
-		if (e.key !== "Enter") return
+		if (e.key !== "Enter" || e.currentTarget.value.trim().length < 1) return
 
 		const buffer = [...messages, e.currentTarget.value]
 		setMessages(buffer)
@@ -18,18 +18,21 @@ const Chatbot = () => {
 	}
 
 	return (
-		<>
-			{messages.map((msg, i) => (
-				<div key={i}>{msg}</div>
-			))}
+		<div className={styles.chatbot}>
+			<div className={styles.chatbotMessagesContainer}>
+				{messages.map((msg, i) => (
+					<div className={styles.chatbotMessage} key={i}>
+						{msg}
+					</div>
+				))}
+			</div>
 			<input
 				ref={inputElRef}
 				type="text"
-				placeholder="Ask me anything"
-				className="border border-indigo-600 p-3"
+				placeholder="Ask me anything, and press Enter."
 				onKeyDown={registerMessage}
 			/>
-		</>
+		</div>
 	)
 }
 
@@ -43,11 +46,11 @@ const PDFDocument = () => (
 
 export default function () {
 	return (
-		<div className={`${styles.reveal} flex`}>
-			<div className="w-80">
+		<div className={`${styles.reveal} ${styles.home}`}>
+			<div className={styles.chatbotContainer}>
 				<Chatbot />
 			</div>
-			<div className="w-full">
+			<div className={styles.documentContainer}>
 				<PDFDocument />
 			</div>
 		</div>

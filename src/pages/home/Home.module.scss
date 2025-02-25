@@ -1,5 +1,68 @@
+@use "../../styles/values" as v;
 @use "../../styles/mixins/animations" as a;
 
 .reveal {
 	@include a.FadeInSlideUp;
+}
+
+.home {
+	display: flex;
+	height: 100%;
+}
+
+.home .chatbotContainer {
+	width: 30%;
+	margin-right: calc(v.$BaseSize * 2);
+}
+
+.home .documentContainer {
+	flex-grow: 1;
+	
+	object {
+		height: 100%;
+		width: 100%;
+		border-radius: calc(v.$BaseSize * 2);
+	}
+}
+
+
+.chatbot {
+	height: 100%;
+	padding: calc(v.$BaseSize * 4) calc(v.$BaseSize * 3.5);
+
+	border: 2px solid v.$NovalyzeGrey;
+	border-radius: calc(v.$BaseSize * 2);
+
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	justify-content: end;
+
+	input {
+		width: 100%;
+		margin-top: calc(v.$BaseSize * 2);
+	}
+}
+
+.chatbot .chatbotMessagesContainer {
+	width: 100%;
+	overflow: auto;
+
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	justify-content: end;
+}
+
+.chatbot .chatbotMessagesContainer .chatbotMessage {
+	padding: calc(v.$BaseSize * 1.5) calc(v.$BaseSize * 3);
+	margin-bottom: calc(v.$BaseSize * 2);
+	border-radius: calc(v.$BaseSize * 2.5);
+
+	color: v.$Complimentary;
+
+	&:last-of-type {
+		color: v.$CreamWhite;
+		background-color: v.$Complimentary;
+	}
 }

@@ -32,3 +32,19 @@ a {
 		margin-right: 0;
 	}
 }
+
+input {
+	color: v.$Primary;
+
+	font-size: 0.9rem;
+	padding: calc(v.$BaseSize * 2) calc(v.$BaseSize * 3.5);
+
+	border: calc(v.$BaseSize / 2) dashed v.$Primary;
+	border-radius: calc(v.$BaseSize * 2);
+
+	@include t.EaseOutExpo;
+
+	&::placeholder {
+		font-weight: 600;
+	}
+}
