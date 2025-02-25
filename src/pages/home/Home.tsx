@@ -1,4 +1,5 @@
 import { type KeyboardEvent, useRef, useState } from "react"
+import styles from "./Home.module.scss"
 import pdfDocument from "../../resources/sample.pdf"
 
 const Chatbot = () => {
@@ -42,15 +43,13 @@ const PDFDocument = () => (
 
 export default function () {
 	return (
-		<>
-			<div className="flex">
-				<div className="w-80">
-					<Chatbot />
-				</div>
-				<div className="w-full">
-					<PDFDocument />
-				</div>
+		<div className={`${styles.reveal} flex`}>
+			<div className="w-80">
+				<Chatbot />
 			</div>
-		</>
+			<div className="w-full">
+				<PDFDocument />
+			</div>
+		</div>
 	)
 }

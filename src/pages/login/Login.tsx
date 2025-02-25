@@ -1,7 +1,11 @@
+import styles from "./Login.module.scss"
+
 export default function () {
 	return (
 		<>
-			<div className="flex h-screen items-center justify-center bg-gray-background-dark">
+			<div
+				className={`${styles.reveal} flex h-screen items-center justify-center bg-gray-background-dark`}
+			>
 				<div className="max-w-md rounded-xl bg-white p-6 shadow-md">
 					<h2 className="text-2xl font-bold text-gray-900">Login</h2>
 					<a href="/register">
