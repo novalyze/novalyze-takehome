@@ -1,11 +1,12 @@
 "use client"
 
 import { PopoverGroup } from "@headlessui/react"
-import Logo from "../img/logo.png"
+import Logo from "../../img/logo.png"
+import styles from "./Header.module.scss"
 
 export default function Header() {
 	return (
-		<header className="bg-black">
+		<header className={`${styles.header} bg-black`}>
 			<nav
 				aria-label="Global"
 				className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"

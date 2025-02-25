@@ -1,5 +1,5 @@
 import { type KeyboardEvent, useRef, useState } from "react"
-import Header from "../components/Header"
+import { Header } from "../components"
 import pdfDocument from "../resources/sample.pdf"
 
 const Chatbot = () => {
