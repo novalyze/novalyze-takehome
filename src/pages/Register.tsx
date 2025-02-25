@@ -1,15 +1,15 @@
 import React from "react";
 import Header from "../components/Header";
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
   return (
     <>
     <Header />
     <div className="flex h-screen items-center justify-center bg-gray-background-dark">
       <div className="max-w-md rounded-xl bg-white p-6 shadow-md">
-        <h2 className="text-2xl font-bold text-gray-900">Login</h2>
-		<a href="/register">
-			<button className="w-1/2 mt-4 rounded-md bg-primary p-2 text-white">New user</button>
+        <h2 className="text-2xl font-bold text-gray-900">New user</h2>
+		<a href="/login">
+			<button className="w-1/2 mt-4 rounded-md bg-primary p-2 text-white">Login</button>
 		</a>
         <form className="mt-4">
           <div className="mb-4">
@@ -28,9 +28,7 @@ const Login: React.FC = () => {
               placeholder="Enter your password"
             />
           </div>
-          <button className="w-1/2 rounded-md bg-primary p-2 text-white">Login</button>
-          <button className="w-1/2 rounded-md bg-primary p-2 text-white">Reset Password</button>
-          <button className="w-full rounded-md bg-primary mt-2 p-2 text-white">Sign in with SSO</button>
+          <button className="w-full rounded-md bg-primary p-2 text-white">Create user</button>
         </form>
       </div>
     </div>
@@ -38,4 +36,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Register;
