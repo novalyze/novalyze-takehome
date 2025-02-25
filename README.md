@@ -40,13 +40,27 @@ Now you can access the development server at `http://localhost:5173/`
 
 ## 📩 Submission Instructions
 
-1. **Create a new branch** using your full name:
+1. **Fork this Repository**
+
+Click the **Fork** button at the top right of this repository page to create a personal copy in your GitHub account.
+
+2. **Clone Your Fork**
+
+Clone the forked repository to your local machine:
 
 ```sh
-git checkout -b your-name
+git clone https://github.com/your-username/your-fork.git
 ```
 
-2. **Commit your changes and push the branch**:
+3. **Create a new branch** using your full name:
+
+Navigate into the repository directory and create a new branch using your full name:
+
+```sh
+git checkout -b your-full-name
+```
+
+4. **Commit your changes and push the branch**:
 
 ```sh
 git add .
@@ -54,7 +68,10 @@ git commit -m "Completed take-home assignment"
 git push origin your-name
 ```
 
-3. **Send me an email to confirm your submission** as well as any comments about the code you've written and changes youve made at
+5. **Create a Pull Request**:
+   On GitHub, navigate to your forked repository and click the Compare & pull request button to create a pull request back to the main repository.
+
+6. **Send me an email to confirm your submission** as well as any comments about the code you've written and changes youve made at
    `samin@novalyze.ai`
 
 ---
