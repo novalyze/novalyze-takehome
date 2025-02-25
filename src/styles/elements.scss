@@ -7,12 +7,12 @@ html {
 
 a {
 	color: v.$Primary;
-	margin-right: calc(v.$BaseSize * 3);
-
+	
 	font-size: 0.9rem;
 	font-weight: 600;
-
+	
 	border-radius: v.$BaseSize;
+	margin-right: calc(v.$BaseSize * 3);
 	padding: calc(v.$BaseSize * 2) calc(v.$BaseSize * 3.5);
 
 	position: relative;
@@ -33,6 +33,26 @@ a {
 	}
 }
 
+a.alternate {
+	padding-left: 0;
+	padding-right: 0;
+
+	border-bottom: 2px dashed v.$NovalyzeGrey;
+	border-radius: 0;
+
+	font-size: 0.8rem;
+
+	@include t.None;
+
+	&:hover {
+		color: v.$Primary;
+		background-color: transparent;
+
+		bottom: 0;
+		border-radius: 0;
+	}
+}
+
 input {
 	color: v.$Primary;
 
@@ -46,5 +66,34 @@ input {
 
 	&::placeholder {
 		font-weight: 600;
+	}
+}
+
+button {
+	color: v.$CreamWhite;
+	background: linear-gradient(
+		45deg,
+		v.$NovalyzeViolet 0%,
+		v.$Primary 100%
+	);
+
+	font-size: 0.9rem;
+	font-weight: 600;
+
+	$borderRadius: calc(v.$BaseSize * 3);
+	border-radius: $borderRadius;
+	border-bottom-right-radius: 0;
+
+	margin-right: calc(v.$BaseSize * 3);
+	padding: calc(v.$BaseSize * 2) calc(v.$BaseSize * 3.5);
+
+	@include t.EaseOutExpo;
+
+	&:hover {
+		border-bottom-right-radius: $borderRadius;
+	}
+
+	&:last-of-type {
+		margin-right: 0;
 	}
 }
