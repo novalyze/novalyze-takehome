@@ -15,11 +15,16 @@ a {
 	border-radius: v.$BaseSize;
 	padding: calc(v.$BaseSize * 2) calc(v.$BaseSize * 3.5);
 
+	position: relative;
+	bottom: 0;
+
 	@include t.EaseOutExpo;
 
 	&:hover {
 		color: v.$CreamWhite;
 		background-color: v.$Primary;
+
+		bottom: calc(v.$BaseSize / 2);
 		border-radius: calc(v.$BaseSize * 1.25);
 	}
 
