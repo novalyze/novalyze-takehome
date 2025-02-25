@@ -40,7 +40,7 @@ const PDFDocument = () => (
 	/>
 )
 
-export default function Home() {
+export default function () {
 	return (
 		<>
 			<div className="flex">

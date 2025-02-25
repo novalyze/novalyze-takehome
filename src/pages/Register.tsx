@@ -1,4 +1,4 @@
-export default function Register() {
+export default function () {
 	return (
 		<>
 			<div className="flex h-screen items-center justify-center bg-gray-background-dark">

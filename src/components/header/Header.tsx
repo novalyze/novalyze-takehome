@@ -1,7 +1,7 @@
 import logo from "../../img/icon.png"
 import styles from "./Header.module.scss"
 
-export default function Header() {
+export default function () {
 	return (
 		<header className={styles.header}>
 			<img alt="Novalyze" src={logo} />
