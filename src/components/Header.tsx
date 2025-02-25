@@ -11,7 +11,7 @@ export default function Header() {
 				className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
 			>
 				<div className="flex lg:flex-1">
-					<a href="#" className="-m-1.5 p-1.5">
+					<a href="#none" className="-m-1.5 p-1.5">
 						<span className="sr-only">Your Company</span>
 						<img alt="Novalyze logo" src={Logo} className="h-15 w-auto" />
 					</a>
@@ -20,10 +20,10 @@ export default function Header() {
 					<a href="/" className="text-sm/6 font-semibold text-secondary">
 						Home
 					</a>
-					<a href="#" className="text-sm/6 font-semibold text-secondary">
+					<a href="#none" className="text-sm/6 font-semibold text-secondary">
 						Marketplace
 					</a>
-					<a href="#" className="text-sm/6 font-semibold text-secondary">
+					<a href="#none" className="text-sm/6 font-semibold text-secondary">
 						Company
 					</a>
 				</PopoverGroup>

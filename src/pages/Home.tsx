@@ -13,7 +13,8 @@ const Chatbot = () => {
 		const buffer = [...messages, e.currentTarget.value]
 		setMessages(buffer)
 
-		inputElRef.current!.value = ""
+		if (inputElRef.current === null) return
+		inputElRef.current.value = ""
 	}
 
 	return (
@@ -32,7 +33,13 @@ const Chatbot = () => {
 	)
 }
 
-const PDFDocument = () => <object data={pdfDocument} type="application/pdf" />
+const PDFDocument = () => (
+	<object
+		title="Sample PDF Document"
+		data={pdfDocument}
+		type="application/pdf"
+	/>
+)
 
 const Home = () => {
 	return (
