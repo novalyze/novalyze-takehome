@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "../components/Header";
 import SamplePDF from "../resources/sample.pdf";
 
@@ -33,8 +33,8 @@ const Home: React.FC = () => {
   return (
     <>
       <Header />
-      <div className="flex h-screen items-center justify-around bg-gray-background-dark">
-        <div className="flex flex-col h-screen bg-gray-100 p-4 max-w-2lg">
+      <div className="flex h-screen bg-gray-background-dark gap-4 p-4">
+        <div className="flex flex-col h-screen bg-gray-100 p-4 w-1/3">
           <h2 className="text-center font-bold">ChatGPT Dummy</h2>
           <div className="flex-1 overflow-y-auto p-4 bg-white shadow-md rounded-lg">
             {message.map((msg, index) => (
@@ -66,10 +66,10 @@ const Home: React.FC = () => {
             </button>
           </div>
         </div>
-        <div className="h-screen bg-gray-100">
+        <div className="h-screen bg-gray-100 w-2/3">
           <iframe
             src={SamplePDF}
-            className=" h-screen w-lg border rounded-lg shadow-md"
+            className="h-screen w-full border rounded-lg shadow-md"
           />
         </div>
       </div>

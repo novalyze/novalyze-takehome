@@ -80,6 +80,7 @@ const Login: React.FC = () => {
             <FaGithub className="text-xl mr-2" /> Continue with GitHub
           </button>
           <div className="flex justify-between mt-4 ">
+            {/* Change password button */}
             <a
               href="#"
               className=" rounded-md bg-primary p-2 text-white cursor-pointer mr-2"
