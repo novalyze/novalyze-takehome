@@ -1,0 +1,99 @@
+@use "./values" as v;
+@use "./mixins/transitions" as t;
+
+html {
+	font-size: calc(v.$BaseSize * 4);
+}
+
+a {
+	color: v.$Primary;
+	
+	font-size: 0.9rem;
+	font-weight: 600;
+	
+	border-radius: v.$BaseSize;
+	margin-right: calc(v.$BaseSize * 3);
+	padding: calc(v.$BaseSize * 2) calc(v.$BaseSize * 3.5);
+
+	position: relative;
+	bottom: 0;
+
+	@include t.EaseOutExpo;
+
+	&:hover {
+		color: v.$CreamWhite;
+		background-color: v.$Primary;
+
+		bottom: calc(v.$BaseSize / 2);
+		border-radius: calc(v.$BaseSize * 1.25);
+	}
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}
+
+a.alternate {
+	padding-left: 0;
+	padding-right: 0;
+
+	border-bottom: 2px dashed v.$NovalyzeGrey;
+	border-radius: 0;
+
+	font-size: 0.8rem;
+
+	@include t.None;
+
+	&:hover {
+		color: v.$Primary;
+		background-color: transparent;
+
+		bottom: 0;
+		border-radius: 0;
+	}
+}
+
+input {
+	color: v.$Primary;
+
+	font-size: 0.9rem;
+	padding: calc(v.$BaseSize * 2) calc(v.$BaseSize * 3.5);
+
+	border: calc(v.$BaseSize / 2) dashed v.$Primary;
+	border-radius: calc(v.$BaseSize * 2);
+
+	@include t.EaseOutExpo;
+
+	&::placeholder {
+		font-weight: 600;
+	}
+}
+
+button {
+	color: v.$CreamWhite;
+	background: linear-gradient(
+		45deg,
+		v.$NovalyzeViolet 0%,
+		v.$Primary 100%
+	);
+
+	font-size: 0.9rem;
+	font-weight: 600;
+
+	$borderRadius: calc(v.$BaseSize * 3);
+	border-radius: $borderRadius;
+	border-bottom-right-radius: 0;
+
+	margin-right: calc(v.$BaseSize * 3);
+	padding: calc(v.$BaseSize * 2) calc(v.$BaseSize * 3.5);
+
+	@include t.EaseOutExpo;
+
+	&:hover {
+		border-bottom-right-radius: $borderRadius;
+	}
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}

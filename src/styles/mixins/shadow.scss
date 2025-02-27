@@ -1,0 +1,5 @@
+// Shadow CSS borrowed from https://madeas.github.io/box-shadows/
+
+@mixin SubtleShadow {
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 20px 0px;
+}

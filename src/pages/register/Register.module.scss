@@ -1,0 +1,14 @@
+@use "../../styles/mixins/animations" as a;
+
+.reveal {
+	@include a.FadeInSlideUp;
+}
+
+.register {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+	width: 100%;
+}

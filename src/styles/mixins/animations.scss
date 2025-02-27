@@ -1,0 +1,22 @@
+@use "../values" as v;
+@use "./transitions.scss" as s;
+
+@mixin FadeInSlideUp {
+	$distance: calc(v.$BaseSize * 5);
+
+	position: relative;
+	opacity: 0;
+	animation: FadeInSlideUpAnimation calc(v.$AnimationDuration * 2) s.$EaseOutExpoCurve forwards;
+
+	@keyframes FadeInSlideUpAnimation {
+		from {
+			opacity: 0;
+			transform: translateY($distance);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+}

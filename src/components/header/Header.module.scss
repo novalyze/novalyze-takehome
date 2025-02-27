@@ -1,0 +1,22 @@
+@use "../../styles/values" as v;
+@use "../../styles/mixins/shadow" as s;
+
+.header {
+	padding: calc(v.$BaseSize * 3) calc(v.$BaseSize * 4);
+	border-radius: 0.5rem;
+
+	background-color: v.$CreamWhite;
+	@include s.SubtleShadow;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	img {
+		$size: 3.5rem;
+
+		height: $size;
+		width: $size;
+		border-radius: calc($size / 8);
+	}
+}
