@@ -1,9 +1,8 @@
-import React from "react";
 import AppRouter from "./routes/Router";
 
 const App: React.FC = () => {
   return (
-    <div>
+    <div className="h-screen">
       <AppRouter />
     </div>
   );

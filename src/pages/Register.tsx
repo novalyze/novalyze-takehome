@@ -6,31 +6,26 @@ import { FcGoogle } from "react-icons/fc";
 
 import { routes } from "../constant/routes";
 import Input from "../components/Input";
-import toast from "react-hot-toast";
 import Button from "../components/Button";
-import { LoginInfo } from "../types";
-import { initialLoginInfo } from "../constant/signInSignUp";
-import { setCookie } from "../utils/cookies";
-import { loginUser } from "../services/authService";
+import { RegisterInfo } from "../types";
+import { initialSignUpInfo } from "../constant/signInSignUp";
+import toast from "react-hot-toast";
+import { registerUser } from "../services/authService";
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
   const navigate = useNavigate();
 
-  const [loginInfo, setLoginInfo] = useState<LoginInfo>(initialLoginInfo);
+  const [registerInfo, setRegisterInfo] =
+    useState<RegisterInfo>(initialSignUpInfo);
 
-  const handleLogin = useCallback(
+  const hanldeRegister = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      setLoginInfo((prev) => ({ ...prev, loading: true }));
+      setRegisterInfo((prev) => ({ ...prev, loading: true }));
 
       try {
-        const userData = await loginUser(loginInfo.email, loginInfo.password);
-        toast.success("Login successful!");
-
-        // Store token in cookies
-        setCookie("token", userData.token, 1); // Token expires in 7 days
-
-        navigate(routes.home);
+        await registerUser(registerInfo.email, registerInfo.password);
+        navigate(routes.login);
       } catch (error) {
         console.error("Login Error:", error);
 
@@ -41,24 +36,39 @@ const Login: React.FC = () => {
 
         toast.error(errorMessage);
       } finally {
-        setLoginInfo((prev) => ({ ...prev, loading: false }));
+        setRegisterInfo((prev) => ({ ...prev, loading: false }));
       }
     },
-    [loginInfo.email, loginInfo.password, navigate]
+    [navigate, registerInfo.email, registerInfo.password]
   );
+
   return (
     <div className="flex h-full items-center justify-center bg-gray-background-dark">
       <div className="w-full md:max-w-md mx-5 md:mx-0 rounded-xl bg-white p-6 shadow-md">
-        <h2 className="text-2xl text-primary font-bold  mb-4 md:mb-5">Login</h2>
-        <form className=" flex flex-col gap-4 md:gap-5" onSubmit={handleLogin}>
+        <h2 className="text-2xl text-primary font-bold  mb-4 md:mb-5">
+          Sign Up
+        </h2>
+        <form
+          className=" flex flex-col gap-4 md:gap-5"
+          onSubmit={hanldeRegister}
+        >
+          <Input
+            label="Name"
+            required
+            placeholder="Enter your name"
+            value={registerInfo.name}
+            onChange={(e) =>
+              setRegisterInfo({ ...registerInfo, name: e.target.value })
+            }
+          />
           <Input
             label="Email"
             type="email"
             required
             placeholder="Enter your email"
-            value={loginInfo.email}
+            value={registerInfo.email}
             onChange={(e) =>
-              setLoginInfo({ ...loginInfo, email: e.target.value })
+              setRegisterInfo({ ...registerInfo, email: e.target.value })
             }
           />
           <Input
@@ -66,18 +76,22 @@ const Login: React.FC = () => {
             type="password"
             required
             placeholder="Enter your password"
-            value={loginInfo.password}
+            value={registerInfo.password}
             onChange={(e) =>
-              setLoginInfo({ ...loginInfo, password: e.target.value })
+              setRegisterInfo({ ...registerInfo, password: e.target.value })
             }
           />
           {/* <button
             type="submit"
             className="w-full rounded-md bg-primary hover:opacity-85 cursor-pointer duration-200 p-2 text-white mt-3 md:mt-4"
           >
-            Login
+            Sign Up
           </button> */}
-          <Button type="submit" text="Login" isLoading={loginInfo.loading} />
+          <Button
+            type="submit"
+            text="Sign Up"
+            isLoading={registerInfo.loading}
+          />
           {/* GITHUB & GOOGLE LOGIN */}
           <div className="flex flex-row items-center gap-4  justify-center">
             <div className="w-10 h-10  rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
@@ -88,12 +102,12 @@ const Login: React.FC = () => {
             </div>
           </div>
           <p className="text-neutral-500 text-center">
-            New here?
+            Already have an account?
             <span
               className="ml-1 hover:underline cursor-pointer"
-              onClick={() => navigate(routes.register)}
+              onClick={() => navigate(routes.login)}
             >
-              Create a new account
+              Sign in
             </span>
           </p>
         </form>
@@ -102,4 +116,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Register;

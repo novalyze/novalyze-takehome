@@ -1,19 +1,26 @@
-import React from "react";
-import Header from '../components/Header';
+import Chatbot from "../components/Chatbot";
 
 const Home: React.FC = () => {
   return (
-    <>
-        <Header />
-        <div className="flex h-screen items-center justify-center bg-gray-background-dark">
-        <div className="max-w-lg rounded-xl bg-white p-8 shadow-md">
-            <h1 className="text-3xl font-bold text-gray-900">Welcome to the Home Page</h1>
-            <p className="mt-4 text-gray-600">
-            This is the main landing page of the app.
-            </p>
+      <div className="flex flex-col h-screen">
+        {/* PDF Viewer - Fully Responsive */}
+        <div className="w-full flex-1 p-4 flex justify-center items-center">
+          <div className="w-full h-full">
+            <h2 className="text-xl font-semibold mb-2 text-center md:text-left">PDF Viewer</h2>
+            
+            <div className="border rounded-md overflow-hidden">
+              <embed
+                src="/src/resources/sample.pdf"
+                type="application/pdf"
+                className="w-full h-[70vh] md:h-[85vh] lg:h-[90vh] min-h-[400px]"
+              />
+            </div>
+          </div>
         </div>
-        </div>
-    </>
+
+        {/* Floating Chatbot */}
+        <Chatbot />
+      </div>
   );
 };
 
