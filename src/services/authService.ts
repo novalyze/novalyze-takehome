@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { userDetails } from "../constant/signInSignUp";
 import { URL } from "../constant/url";
 import apiConfig from "./config";
@@ -8,7 +7,7 @@ export interface LoginResponse {
 }
 
 export const loginUser = async (email: string, password: string): Promise<LoginResponse> => {
-  
+  console.log(email, password);
   try {
     const response = await fetch(URL.login, {
       method: "POST",
@@ -27,6 +26,7 @@ export const loginUser = async (email: string, password: string): Promise<LoginR
 };
 
 export const registerUser = async (email: string, password: string): Promise<LoginResponse> => {
+  console.log(email, password);
   try {
     const response = await fetch(URL.register, {
       method: "POST",
